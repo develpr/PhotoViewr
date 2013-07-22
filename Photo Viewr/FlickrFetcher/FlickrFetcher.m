@@ -36,9 +36,11 @@
 {
     NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&photoset_id=72157612788172127&format=json&nojsoncallback=1&extras=original_format,tags,description,geo,date_upload,owner_name"];
 
-    NSDictionary *result = [[self executeFlickrFetch:request] valueForKey:@"photoset "];
+    NSDictionary *result = [self executeFlickrFetch:request];
+    NSDictionary *photos = [result valueForKey:@"photoset"];
+    NSArray *photoArray = [photos valueForKey:@"photo"];
     
-    return [[self executeFlickrFetch:request] valueForKey:@"photo"];
+    return photoArray;
 }
 
 + (NSArray *)stanfordPhotos
