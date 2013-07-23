@@ -21,29 +21,21 @@
     [self.tableView reloadData];
 }
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (NSString *)titleForRow:(NSUInteger)row
-{
-    return @"TEST";
+{ 
+    return [self.photos[row][FLICKR_PHOTO_TITLE] description]; // description because could be NSNull
 }
+
+// a helper method that looks in the Model for the photo dictionary at the given row
+//  and gets the owner of the photo out of it
 
 - (NSString *)subtitleForRow:(NSUInteger)row
 {
-    return @"BLAH";
+    return [self.photos[row][FLICKR_PHOTO_OWNER] description]; // description because could be NSNull
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -64,6 +56,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *test = @"";
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         if (indexPath) {
