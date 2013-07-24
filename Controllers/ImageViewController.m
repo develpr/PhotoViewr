@@ -49,10 +49,11 @@
         NSData *imageData = [[NSData alloc]initWithContentsOfURL:self.imageURL];
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         if(image){
-            self.scrollView.zoomScale = 1.0;
             self.scrollView.contentSize = image.size;
             self.imageView.image = image;
-            self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);            
+            self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
+            [self.scrollView setContentMode:UIViewContentModeScaleAspectFit];
+            self.scrollView.zoomScale = .3;
         }
     }
 }
