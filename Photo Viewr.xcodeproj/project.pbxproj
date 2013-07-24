@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB667528179CFECD004050A7 /* AsiaPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB667527179CFECD004050A7 /* AsiaPhotosTVC.m */; };
+		DB66752C179F6BAF004050A7 /* RecentPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66752B179F6BAF004050A7 /* RecentPhotos.m */; };
+		DB66752F179F8577004050A7 /* RecentViewedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66752E179F8577004050A7 /* RecentViewedTVC.m */; };
 		DB8CE33B1798E43B002E6001 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8CE33A1798E43B002E6001 /* UIKit.framework */; };
 		DB8CE33D1798E43B002E6001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8CE33C1798E43B002E6001 /* Foundation.framework */; };
 		DB8CE33F1798E43B002E6001 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8CE33E1798E43B002E6001 /* CoreGraphics.framework */; };
@@ -27,6 +29,10 @@
 /* Begin PBXFileReference section */
 		DB667526179CFECD004050A7 /* AsiaPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsiaPhotosTVC.h; sourceTree = "<group>"; };
 		DB667527179CFECD004050A7 /* AsiaPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsiaPhotosTVC.m; sourceTree = "<group>"; };
+		DB66752A179F6BAF004050A7 /* RecentPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotos.h; sourceTree = "<group>"; };
+		DB66752B179F6BAF004050A7 /* RecentPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotos.m; sourceTree = "<group>"; };
+		DB66752D179F8577004050A7 /* RecentViewedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentViewedTVC.h; sourceTree = "<group>"; };
+		DB66752E179F8577004050A7 /* RecentViewedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentViewedTVC.m; sourceTree = "<group>"; };
 		DB8CE3371798E43B002E6001 /* Photo Viewr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Viewr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8CE33A1798E43B002E6001 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB8CE33C1798E43B002E6001 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB667529179F6B8E004050A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB66752A179F6BAF004050A7 /* RecentPhotos.h */,
+				DB66752B179F6BAF004050A7 /* RecentPhotos.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		DB8CE32E1798E43B002E6001 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +110,7 @@
 		DB8CE3401798E43B002E6001 /* Photo Viewr */ = {
 			isa = PBXGroup;
 			children = (
+				DB667529179F6B8E004050A7 /* Models */,
 				DBD8626517990B550076CBDC /* Controllers */,
 				DBD8625D17990B0E0076CBDC /* FlickrFetcher */,
 				DB8CE3521798E43B002E6001 /* MainStoryboard_iPhone.storyboard */,
@@ -139,6 +155,8 @@
 				DB667527179CFECD004050A7 /* AsiaPhotosTVC.m */,
 				DBD8626217990B470076CBDC /* ImageViewController.h */,
 				DBD8626317990B470076CBDC /* ImageViewController.m */,
+				DB66752D179F8577004050A7 /* RecentViewedTVC.h */,
+				DB66752E179F8577004050A7 /* RecentViewedTVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +234,8 @@
 				DBD8626417990B470076CBDC /* ImageViewController.m in Sources */,
 				DBA1C70C179CE5B0009EFD03 /* FlickrPhotosTVC.m in Sources */,
 				DB667528179CFECD004050A7 /* AsiaPhotosTVC.m in Sources */,
+				DB66752C179F6BAF004050A7 /* RecentPhotos.m in Sources */,
+				DB66752F179F8577004050A7 /* RecentViewedTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

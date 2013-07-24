@@ -16,11 +16,57 @@
                     </tabBar>
                     <connections>
                         <segue destination="2L7-At-Sp1" kind="relationship" relationship="viewControllers" id="Kip-lG-X2s"/>
+                        <segue destination="Xbo-VV-fxJ" kind="relationship" relationship="viewControllers" id="m2q-YL-CVe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dT-6Q-MSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-616" y="-130"/>
+        </scene>
+        <!--Recent ViewedTVC-->
+        <scene sceneID="O5O-ZP-gsc">
+            <objects>
+                <tableViewController id="EDW-70-9tL" customClass="RecentViewedTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lzf-5B-LQY">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecentPhoto" textLabel="Y7r-sn-5f8" detailTextLabel="4Yd-RH-1Gv" style="IBUITableViewCellStyleSubtitle" id="gZn-uu-BnH">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7r-sn-5f8">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yd-RH-1Gv">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="2" kind="push" identifier="Show Recent Image" id="PaV-KT-LXE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EDW-70-9tL" id="6zB-UI-NCj"/>
+                            <outlet property="delegate" destination="EDW-70-9tL" id="5Bw-kB-r3G"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fz3-S9-2DB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swa-zl-Ki8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="215"/>
         </scene>
         <!--Asia PhotosTVC-->
         <scene sceneID="9Y6-JA-dMX">
@@ -94,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="-452"/>
+            <point key="canvasLocation" x="1067" y="-111"/>
         </scene>
         <!--Navigation Controller - Asia Photos-->
         <scene sceneID="hKW-gd-Vba">
@@ -115,27 +161,32 @@
             </objects>
             <point key="canvasLocation" x="-70" y="-452"/>
         </scene>
+        <!--Navigation Controller - Recent Photos-->
+        <scene sceneID="1MK-t0-W3n">
+            <objects>
+                <navigationController id="Xbo-VV-fxJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recent Photos" id="nCt-6Q-ccZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="43R-vK-fOE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EDW-70-9tL" kind="relationship" relationship="rootViewController" id="c9r-JZ-H32"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jcl-sB-U9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="215"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="AsiaPhotosTVC" superclassName="FlickrPhotosTVC">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AsiaPhotosTVC.h"/>
-        </class>
-        <class className="FlickrPhotosTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrPhotosTVC.h"/>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="PaV-KT-LXE"/>
+    </inferredMetricsTieBreakers>
 </document>
