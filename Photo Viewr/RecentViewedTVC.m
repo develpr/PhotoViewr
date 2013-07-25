@@ -23,10 +23,17 @@
     return cell;
 }
 
-- (void)viewDidLoad
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    self.photos = [[RecentPhotos class] recentPhotos];
+//}
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:YES];
     self.photos = [[RecentPhotos class] recentPhotos];
 }
+
 
 @end
