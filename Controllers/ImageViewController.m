@@ -52,10 +52,25 @@
             self.scrollView.contentSize = image.size;
             self.imageView.image = image;
             self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
-            [self.scrollView setContentMode:UIViewContentModeScaleAspectFit];
-            self.scrollView.zoomScale = .3;
         }
     }
+}
+
+- (void) viewDidLayoutSubviews
+{
+    CGRect scrollViewBounds = self.scrollView.bounds;
+    
+    CGFloat scrollAspectRatio = scrollViewBounds.size.width/scrollViewBounds.size.height;
+    
+    CGSize imageViewSize = self.imageView.image.size;
+    CGFloat imageAspectRatio = imageViewSize.width/imageViewSize.height;
+    
+    if(imageAspectRatio < scrollAspectRatio){
+        self.scrollView.zoomScale = scrollViewBounds.size.height/imageViewSize.height;
+    }else{
+        self.scrollView.zoomScale = scrollViewBounds.size.width/imageViewSize.width;
+    }
+
 }
 
 - (void)viewDidLoad
