@@ -10,6 +10,8 @@
 		DB667528179CFECD004050A7 /* AsiaPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB667527179CFECD004050A7 /* AsiaPhotosTVC.m */; };
 		DB66752C179F6BAF004050A7 /* RecentPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66752B179F6BAF004050A7 /* RecentPhotos.m */; };
 		DB66752F179F8577004050A7 /* RecentViewedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66752E179F8577004050A7 /* RecentViewedTVC.m */; };
+		DB66753117A37C36004050A7 /* 12-eye.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66753017A37C36004050A7 /* 12-eye.png */; };
+		DB66753317A37C57004050A7 /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = DB66753217A37C57004050A7 /* 29-heart.png */; };
 		DB8CE33B1798E43B002E6001 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8CE33A1798E43B002E6001 /* UIKit.framework */; };
 		DB8CE33D1798E43B002E6001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8CE33C1798E43B002E6001 /* Foundation.framework */; };
 		DB8CE33F1798E43B002E6001 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8CE33E1798E43B002E6001 /* CoreGraphics.framework */; };
@@ -33,6 +35,8 @@
 		DB66752B179F6BAF004050A7 /* RecentPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotos.m; sourceTree = "<group>"; };
 		DB66752D179F8577004050A7 /* RecentViewedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentViewedTVC.h; sourceTree = "<group>"; };
 		DB66752E179F8577004050A7 /* RecentViewedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentViewedTVC.m; sourceTree = "<group>"; };
+		DB66753017A37C36004050A7 /* 12-eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12-eye.png"; sourceTree = "<group>"; };
+		DB66753217A37C57004050A7 /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
 		DB8CE3371798E43B002E6001 /* Photo Viewr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Viewr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8CE33A1798E43B002E6001 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB8CE33C1798E43B002E6001 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +127,8 @@
 		DB8CE3411798E43B002E6001 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB66753217A37C57004050A7 /* 29-heart.png */,
+				DB66753017A37C36004050A7 /* 12-eye.png */,
 				DB8CE3491798E43B002E6001 /* AppDelegate.h */,
 				DB8CE34A1798E43B002E6001 /* AppDelegate.m */,
 				DB8CE3421798E43B002E6001 /* Photo Viewr-Info.plist */,
@@ -218,6 +224,8 @@
 				DB8CE3511798E43B002E6001 /* Default-568h@2x.png in Resources */,
 				DB8CE3541798E43B002E6001 /* MainStoryboard_iPhone.storyboard in Resources */,
 				DB8CE3571798E43B002E6001 /* MainStoryboard_iPad.storyboard in Resources */,
+				DB66753117A37C36004050A7 /* 12-eye.png in Resources */,
+				DB66753317A37C57004050A7 /* 29-heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

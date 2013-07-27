@@ -124,12 +124,15 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Goy-fK-OVA">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hLt-f0-joQ"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Goy-fK-OVA" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="6cr-P4-oRD"/>
-                            <constraint firstItem="Goy-fK-OVA" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="chc-pS-mha"/>
+                            <constraint firstItem="Goy-fK-OVA" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="7YX-hI-hjS"/>
+                            <constraint firstItem="hLt-f0-joQ" firstAttribute="centerY" secondItem="Goy-fK-OVA" secondAttribute="centerY" type="default" id="aCG-ny-NqX"/>
+                            <constraint firstItem="Goy-fK-OVA" firstAttribute="centerX" secondItem="hLt-f0-joQ" secondAttribute="centerX" type="default" id="iXF-G2-nN1"/>
                             <constraint firstItem="Goy-fK-OVA" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="meJ-XN-WVE"/>
+                            <constraint firstItem="Goy-fK-OVA" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="sCA-vT-76J"/>
                             <constraint firstItem="Goy-fK-OVA" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="tjA-f1-oIC"/>
                         </constraints>
                     </view>
@@ -146,7 +149,7 @@
         <scene sceneID="hKW-gd-Vba">
             <objects>
                 <navigationController id="2L7-At-Sp1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Asia Photos" id="Ccd-Ci-Oje"/>
+                    <tabBarItem key="tabBarItem" title="Asia Photos" image="29-heart.png" id="Ccd-Ci-Oje"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6rF-3F-kZ2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -165,7 +168,7 @@
         <scene sceneID="1MK-t0-W3n">
             <objects>
                 <navigationController id="Xbo-VV-fxJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recent Photos" id="nCt-6Q-ccZ"/>
+                    <tabBarItem key="tabBarItem" title="Recent Photos" image="12-eye.png" id="nCt-6Q-ccZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="43R-vK-fOE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -181,6 +184,30 @@
             <point key="canvasLocation" x="-70" y="215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="12-eye.png" width="24" height="16"/>
+        <image name="29-heart.png" width="24" height="21"/>
+    </resources>
+    <classes>
+        <class className="AsiaPhotosTVC" superclassName="FlickrPhotosTVC">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AsiaPhotosTVC.h"/>
+        </class>
+        <class className="FlickrPhotosTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrPhotosTVC.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RecentViewedTVC" superclassName="FlickrPhotosTVC">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentViewedTVC.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
