@@ -58,6 +58,7 @@
                             self.scrollView.contentSize = image.size;
                             self.imageView.image = image;
                             self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
+                            [self setupImageZoom];
                         });
                     }
                 }
@@ -66,7 +67,8 @@
         }
     }
 
-- (void) viewDidLayoutSubviews
+
+- (void) setupImageZoom
 {
     [super viewDidLayoutSubviews];
     
@@ -82,18 +84,17 @@
     }else{
         self.scrollView.zoomScale = scrollViewBounds.size.width/imageViewSize.width;
     }
-
+    
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     [self.scrollView addSubview:self.imageView];
     self.scrollView.maximumZoomScale = 25.0;
     self.scrollView.minimumZoomScale = 0.01;
     self.scrollView.delegate = self;
-    [self setupImage];
 }
 
 @end
