@@ -50,6 +50,7 @@
             
             dispatch_queue_t imageFetchQ = dispatch_queue_create("image fetcher", NULL);
             dispatch_async(imageFetchQ, ^{
+                [NSThread sleepForTimeInterval:5];
                 NSData *imageData = [[NSData alloc]initWithContentsOfURL:self.imageURL];
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
                 if(self.imageURL == imageURL){
@@ -70,7 +71,6 @@
 
 - (void) setupImageZoom
 {
-    [super viewDidLayoutSubviews];
     
     CGRect scrollViewBounds = self.scrollView.bounds;
     
@@ -87,9 +87,11 @@
     
 }
 
-
+//todo: figure out if there is a case where we need to call setupImage in this location
+//and if so determine if setupImage has already run.
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     [self.scrollView addSubview:self.imageView];
     self.scrollView.maximumZoomScale = 25.0;
