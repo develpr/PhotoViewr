@@ -52,12 +52,21 @@
             
             dispatch_queue_t imageFetchQ = dispatch_queue_create("image fetcher", NULL);
             dispatch_async(imageFetchQ, ^{
-                [NSThread sleepForTimeInterval:5];
+                
+                //Start network activity indicator
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+                
                 NSData *imageData = [[NSData alloc]initWithContentsOfURL:self.imageURL];
+                
+                //Disable the network activity indicator
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
+
                 if(self.imageURL == imageURL){
                     if(image){
                         dispatch_async(dispatch_get_main_queue(), ^{
+
                             [self.spinnerLoader stopAnimating];
                             self.scrollView.contentSize = image.size;
                             self.imageView.image = image;

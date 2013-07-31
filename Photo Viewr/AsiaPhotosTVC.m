@@ -30,7 +30,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.photos = [FlickrFetcher asiaBlackAndWhitePhotos];
+    [self loadNewPhotos];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadNewPhotos)
+                  forControlEvents:UIControlEventValueChanged];
+}
+
+
+- (void)loadNewPhotos
+{
+    [self.refreshControl beginRefreshing];
+    
+    dispatch_queue_t loaderQ = dispatch_queue_create("load latest photos", NULL);
+    dispatch_async(loaderQ, ^{
+        NSArray *latestPhotos = [FlickrFetcher asiaBlackAndWhitePhotos];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photos = latestPhotos;
+            [self.refreshControl endRefreshing];
+        });
+    });
+    
+    
 }
 
 @end

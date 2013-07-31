@@ -22,6 +22,7 @@
     [self.tableView reloadData];
 }
 
+
 - (NSString *)titleForRow:(NSUInteger)row
 { 
     return [self.photos[row][FLICKR_PHOTO_TITLE] description]; // description because could be NSNull
@@ -53,7 +54,6 @@
 
 
 #pragma mark - Segue
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
