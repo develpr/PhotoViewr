@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinnerLoader;
+
 
 @end
 
@@ -45,7 +47,7 @@
         if(self.imageView){
             self.scrollView.contentSize = CGSizeZero;
             self.imageView.image = nil;
-            
+
             NSURL *imageURL = self.imageURL;
             
             dispatch_queue_t imageFetchQ = dispatch_queue_create("image fetcher", NULL);
@@ -56,6 +58,7 @@
                 if(self.imageURL == imageURL){
                     if(image){
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.spinnerLoader stopAnimating];
                             self.scrollView.contentSize = image.size;
                             self.imageView.image = image;
                             self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
@@ -91,7 +94,7 @@
 //and if so determine if setupImage has already run.
 - (void)viewDidLoad
 {
-    
+    [self.spinnerLoader startAnimating];
     [super viewDidLoad];
     [self.scrollView addSubview:self.imageView];
     self.scrollView.maximumZoomScale = 25.0;
